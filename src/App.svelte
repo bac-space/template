@@ -1,30 +1,34 @@
 <script>
-	export let name;
+
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<div class="container">
+  <h1>Welcome</h1>
+  <p>Starting a new project.</p>
+</div>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  :global(:root) {
+    --white: hsla(0, 100%, 100%, 1);
+    --black: hsla(0, 0%, 0%, 1);
+    --grey30: hsla(0, 0%, 30%, 1);
+    --grey50: hsla(0, 0%, 50%, 1);
+    --grey70: hsla(0, 0%, 70%, 1);
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  :global(body) {
+    background-color: var(--grey70);
+    font-size: 62.5% /* 10px */
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  .container {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 64rem) {
+    .container {
+      max-width: none;
+    }
+  }
 </style>
